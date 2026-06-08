@@ -2,164 +2,79 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — Syed Wasif Abbas Hamdani</title>
+<title>Contact -- Syed Wasif Abbas Hamdani</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
-<style>
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
-.contact-card {
-  background: var(--white); border: 1px solid var(--rule);
-  padding: 2rem; text-decoration: none; display: block;
-  transition: box-shadow 0.2s, border-color 0.2s;
-}
-.contact-card:hover { box-shadow: 0 4px 20px rgba(15,35,64,0.08); border-color: var(--sky); }
-.cc-type { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
-.cc-name { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--navy); margin-bottom: 0.3rem; }
-.cc-value { font-size: 0.9rem; color: var(--steel); font-family: 'DM Mono', monospace; }
-.ref-card {
-  background: var(--white); border: 1px solid var(--rule);
-  padding: 1.8rem; margin-bottom: 1rem;
-}
-.ref-name { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--navy); margin-bottom: 0.2rem; }
-.ref-title { font-size: 0.88rem; color: var(--muted); font-style: italic; margin-bottom: 0.15rem; }
-.ref-inst { font-size: 0.88rem; color: var(--text); margin-bottom: 0.4rem; }
-.ref-email { font-family: 'DM Mono', monospace; font-size: 0.82rem; color: var(--steel); }
-</style>
 </head>
 <body>
 <nav>
-  <a href="index.html" class="nav-brand">S.W.A. <span>Hamdani</span></a>
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-    <span></span><span></span><span></span>
-  </button>
-    <div class="nav-links" id="navLinks">
-    <a href="index.html">Home</a>
-    <a href="research.html">Research</a>
-    <a href="projects.html">R&D Projects</a>
-    <a href="experience.html">Experience</a>
-    <a href="education.html">Education</a>
-    <a href="awards.html">Awards</a>
-    <a href="outreach.html">Outreach</a>
-    <a href="contact.html" class="active">Contact</a>
+  <a href="index.html" class="nav-brand">Syed Wasif Abbas Hamdani</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a><a href="research.html">Research</a>
+    <a href="projects.html">R&D Projects</a><a href="experience.html">Experience</a>
+    <a href="education.html">Education</a><a href="awards.html">Awards</a>
+    <a href="outreach.html">Outreach</a><a href="contact.html" class="active">Contact</a>
   </div>
 </nav>
-<div class="page-hero">
-  <div class="page-hero-grid"></div>
-  <div class="page-hero-inner">
-    <div class="page-label">Contact</div>
-    <h1 class="page-title">Get in Touch</h1>
-    <p class="page-subtitle">Open to research collaborations, PhD supervision inquiries, co-authorship on cybersecurity and IoT security topics, and speaking invitations.</p>
+<div class="page-header">
+  <div class="page-header-inner">
+    <h1>Contact</h1>
+    <p>Open to research collaborations, co-authorship, PhD discussions, and speaking invitations.</p>
   </div>
 </div>
 <main>
 
   <section>
-    <div class="section-label">Direct Contact</div>
-    <h2>Contact &amp; Profiles</h2>
-    <div class="contact-grid">
-      <div>
-        <a href="mailto:hamdani.cybsec@gmail.com" class="contact-card">
-          <div class="cc-type">Primary Email</div>
-          <div class="cc-name">hamdani.cybsec@gmail.com</div>
-          <div class="cc-value">→ Send Email</div>
-        </a>
-        <a href="mailto:wasif@cyberwalk.pk" class="contact-card" style="margin-top:1rem;">
-          <div class="cc-type">Research / Blog Email</div>
-          <div class="cc-name">wasif@cyberwalk.pk</div>
-          <div class="cc-value">→ Send Email</div>
-        </a>
-        <div class="contact-card" style="margin-top:1rem; cursor:default;">
-          <div class="cc-type">Location</div>
-          <div class="cc-name">Rawalpindi, Pakistan</div>
-          <div class="cc-value">+92-333-5923709</div>
-        </div>
-      </div>
-
-      <div>
-        <a href="https://scholar.google.com/citations?user=LyV-tMEAAAAJ&hl=en" target="_blank" class="contact-card">
-          <div class="cc-type">Google Scholar</div>
-          <div class="cc-name">Research Publications &amp; Citations</div>
-          <div class="cc-value">96+ citations · ORCID: 0000-0003-1015-1104</div>
-        </a>
-        <a href="https://www.linkedin.com/in/wasifhamdani/" target="_blank" class="contact-card" style="margin-top:1rem;">
-          <div class="cc-type">LinkedIn</div>
-          <div class="cc-name">Professional Profile</div>
-          <div class="cc-value">linkedin.com/in/wasifhamdani</div>
-        </a>
-        <a href="https://github.com/swhamdani" target="_blank" class="contact-card" style="margin-top:1rem;">
-          <div class="cc-type">GitHub</div>
-          <div class="cc-name">Open Source &amp; Code</div>
-          <div class="cc-value">github.com/swhamdani</div>
-        </a>
-        <a href="https://cyberwalk.pk" target="_blank" class="contact-card" style="margin-top:1rem;">
-          <div class="cc-type">Cybersecurity Blog</div>
-          <div class="cc-name">CyberWalk.pk</div>
-          <div class="cc-value">cyberwalk.pk</div>
-        </a>
-      </div>
-    </div>
-
-    <div class="info-box" style="margin-top:2rem; max-width:720px;">
-      <h3>Open to Collaboration</h3>
-      <p>I am actively open to co-authorship on IoT security, blockchain-based network security, and network resilience topics; PhD research partnerships and supervision discussions; invited talks and workshops on cybersecurity; and Internet governance and policy engagements through ISOC.</p>
-    </div>
+    <h2>Contact Information</h2>
+    <div class="contact-row"><span class="contact-lbl">Email</span><a href="mailto:hamdani.cybsec@gmail.com">hamdani.cybsec@gmail.com</a></div>
+    <div class="contact-row"><span class="contact-lbl">Email</span><a href="mailto:wasif@cyberwalk.pk">wasif@cyberwalk.pk</a></div>
+    <div class="contact-row"><span class="contact-lbl">Phone</span><span>+92-333-5923709</span></div>
+    <div class="contact-row"><span class="contact-lbl">Location</span><span>Rawalpindi, Pakistan</span></div>
+    <div class="contact-row"><span class="contact-lbl">Scholar</span><a href="https://scholar.google.com/citations?user=LyV-tMEAAAAJ&hl=en" target="_blank">Google Scholar Profile</a></div>
+    <div class="contact-row"><span class="contact-lbl">ORCID</span><a href="https://orcid.org/0000-0003-1015-1104" target="_blank">0000-0003-1015-1104</a></div>
+    <div class="contact-row"><span class="contact-lbl">LinkedIn</span><a href="https://www.linkedin.com/in/wasifhamdani/" target="_blank">linkedin.com/in/wasifhamdani</a></div>
+    <div class="contact-row"><span class="contact-lbl">GitHub</span><a href="https://github.com/swhamdani" target="_blank">github.com/swhamdani</a></div>
+    <div class="contact-row"><span class="contact-lbl">ResearchGate</span><a href="https://www.researchgate.net/profile/Syed-Wasif-Abbas-Hamdani-2" target="_blank">ResearchGate Profile</a></div>
+    <div class="contact-row"><span class="contact-lbl">Blog</span><a href="https://cyberwalk.pk" target="_blank">cyberwalk.pk</a></div>
   </section>
 
   <section>
-    <div class="section-label">Academic References</div>
-    <h2>References</h2>
-    <p style="font-size:0.93rem; color:var(--muted); margin-bottom:1.5rem;">References available on request. Key contacts are listed below.</p>
+    <h2>Open to Collaboration</h2>
+    <p>I am actively open to co-authorship on IoT security, blockchain-based network security, and network resilience topics; PhD research partnerships and supervision discussions; invited talks and workshops on cybersecurity; and Internet governance and policy engagements through ISOC.</p>
+  </section>
 
-    <div class="ref-card">
+  <section>
+    <h2>References</h2>
+    <p>References are available on request. Key contacts are listed below.</p>
+
+    <div class="ref-entry">
       <div class="ref-name">Dr. Haider Abbas</div>
-      <div class="ref-title">Professor &amp; Head of Cyber Security · Currently serving as DG PKCERT</div>
-      <div class="ref-inst">National University of Sciences and Technology (NUST), Pakistan</div>
-      <div class="ref-email">haider@mcs.edu.pk</div>
+      <div class="ref-detail">Professor and Head of Cyber Security (currently serving as DG PKCERT)<br>National University of Sciences and Technology (NUST), Pakistan<br><a href="mailto:haider@mcs.edu.pk">haider@mcs.edu.pk</a></div>
     </div>
-    <div class="ref-card">
+    <div class="ref-entry">
       <div class="ref-name">Dr. Muhammad Zia</div>
-      <div class="ref-title">Assistant Professor</div>
-      <div class="ref-inst">University of Jamestown, North Dakota, USA</div>
-      <div class="ref-email">zia.muhammad@uj.edu</div>
+      <div class="ref-detail">Assistant Professor, University of Jamestown, North Dakota, USA<br><a href="mailto:zia.muhammad@uj.edu">zia.muhammad@uj.edu</a></div>
     </div>
-    <div class="ref-card">
+    <div class="ref-entry">
       <div class="ref-name">Dr. Waleed Bin Shahid</div>
-      <div class="ref-title">Lecturer, Information Security</div>
-      <div class="ref-inst">Royal Holloway, University of London, UK</div>
-      <div class="ref-email">waleed.shahid@rhul.ac.uk</div>
+      <div class="ref-detail">Lecturer, Information Security, Royal Holloway, University of London, UK<br><a href="mailto:waleed.shahid@rhul.ac.uk">waleed.shahid@rhul.ac.uk</a></div>
     </div>
-    <div class="ref-card">
+    <div class="ref-entry">
       <div class="ref-name">Dr. Abdul Waheed Khan</div>
-      <div class="ref-title">Assistant Professor</div>
-      <div class="ref-inst">Pak-Austria Fachhochschule Institute of Applied Sciences and Technology, Pakistan</div>
-      <div class="ref-email">waheed.khan@fecid.paf-iast.edu.pk</div>
+      <div class="ref-detail">Assistant Professor, Pak-Austria Fachhochschule Institute of Applied Sciences and Technology, Pakistan<br><a href="mailto:waheed.khan@fecid.paf-iast.edu.pk">waheed.khan@fecid.paf-iast.edu.pk</a></div>
     </div>
   </section>
 
 </main>
 <footer>
-  <span>© 2026 Syed Wasif Abbas Hamdani</span>
-  <div class="footer-links">
-    <a href="https://orcid.org/0000-0003-1015-1104" target="_blank">ORCID</a>
-    <a href="https://scholar.google.com/citations?user=LyV-tMEAAAAJ&hl=en" target="_blank">Scholar</a>
-    <a href="https://github.com/swhamdani" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/wasifhamdani/" target="_blank">LinkedIn</a>
-    <a href="https://cyberwalk.pk" target="_blank">CyberWalk.pk</a>
-    <a href="mailto:hamdani.cybsec@gmail.com">Email</a>
-  </div>
+  <p>Syed Wasif Abbas Hamdani &nbsp;&middot;&nbsp; <a href="mailto:hamdani.cybsec@gmail.com">hamdani.cybsec@gmail.com</a> &nbsp;&middot;&nbsp; <a href="https://scholar.google.com/citations?user=LyV-tMEAAAAJ&amp;hl=en" target="_blank">Google Scholar</a> &nbsp;&middot;&nbsp; <a href="https://orcid.org/0000-0003-1015-1104" target="_blank">ORCID</a> &nbsp;&middot;&nbsp; <a href="https://github.com/swhamdani" target="_blank">GitHub</a></p>
 </footer>
 <script>
-  const toggle = document.getElementById('navToggle');
-  const links  = document.getElementById('navLinks');
-  toggle.addEventListener('click', () => {
-    toggle.classList.toggle('open');
-    links.classList.toggle('open');
-  });
-  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    toggle.classList.remove('open');
-    links.classList.remove('open');
-  }));
+  const t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+  t.addEventListener('click',()=>{t.classList.toggle('open');l.classList.toggle('open');});
+  l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{t.classList.remove('open');l.classList.remove('open');}));
 </script>
 </body>
 </html>
