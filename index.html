@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Syed Wasif Abbas Hamdani — Cybersecurity Researcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:    #0f2340;
+    --ink:     #1a2e44;
+    --steel:   #1d5fa6;
+    --sky:     #3a86d4;
+    --pale:    #e8f1fb;
+    --cream:   #f7f4ef;
+    --warm:    #f0ebe2;
+    --gold:    #c8973a;
+    --text:    #1c2b3a;
+    --muted:   #5a6a7a;
+    --rule:    #cdd8e8;
+    --white:   #ffffff;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAVIGATION ─────────────────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(15,35,64,0.97);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 0 2.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .nav-brand {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+  }
+  .nav-brand span { color: var(--sky); }
+  .nav-links { display: flex; gap: 0; }
+  .nav-links a {
+    color: rgba(255,255,255,0.72);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0 1rem;
+    height: 60px;
+    display: flex; align-items: center;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .nav-links a:hover, .nav-links a.active {
+    color: var(--white);
+    border-bottom-color: var(--sky);
+  }
+
+  /* ── HERO ───────────────────────────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 70% 50%, rgba(29,95,166,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 20% 80%, rgba(58,134,212,0.10) 0%, transparent 60%);
+  }
+  .hero-grid-bg {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 8rem 4rem 6rem 6rem;
+    position: relative; z-index: 1;
+  }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--sky);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  .hero-tag::before {
+    content: '';
+    display: block; width: 24px; height: 1px;
+    background: var(--sky);
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.6rem, 4vw, 3.8rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 0.3rem;
+    letter-spacing: -0.01em;
+  }
+  .hero-name-sub {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+    color: rgba(255,255,255,0.45);
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+  .hero-desc {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.8;
+    max-width: 460px;
+    margin-bottom: 2.5rem;
+  }
+  .hero-tags {
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--sky);
+    border: 1px solid rgba(58,134,212,0.4);
+    padding: 0.3rem 0.75rem;
+    border-radius: 2px;
+    letter-spacing: 0.04em;
+  }
+  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--steel);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.85rem 2rem;
+    border: 1px solid var(--steel);
+    transition: background 0.2s, transform 0.2s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--sky); border-color: var(--sky); transform: translateY(-1px); }
+  .btn-ghost {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.85rem 2rem;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: border-color 0.2s, color 0.2s;
+    display: inline-block;
+  }
+  .btn-ghost:hover { border-color: rgba(255,255,255,0.6); color: var(--white); }
+
+  .hero-right {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 8rem 6rem 6rem 3rem;
+    position: relative; z-index: 1;
+    border-left: 1px solid rgba(255,255,255,0.06);
+  }
+
+  /* Stats strip */
+  .stat-strip {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 0; margin-bottom: 3rem;
+  }
+  .stat {
+    padding: 1.5rem;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .stat:nth-child(3) { border-right: none; }
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .stat-number span { color: var(--sky); font-size: 1.2rem; vertical-align: super; }
+  .stat-label {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-family: 'DM Mono', monospace;
+  }
+
+  /* Links panel */
+  .hero-links { display: flex; flex-direction: column; gap: 0.75rem; }
+  .hero-link {
+    display: flex; align-items: center; gap: 1rem;
+    text-decoration: none;
+    padding: 0.9rem 1.2rem;
+    border: 1px solid rgba(255,255,255,0.07);
+    background: rgba(255,255,255,0.03);
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .hero-link:hover {
+    background: rgba(29,95,166,0.15);
+    border-color: rgba(58,134,212,0.3);
+  }
+  .hero-link-icon {
+    width: 32px; height: 32px;
+    background: rgba(29,95,166,0.25);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.9rem;
+  }
+  .hero-link-text { flex: 1; }
+  .hero-link-label {
+    display: block;
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-family: 'DM Mono', monospace;
+    margin-bottom: 0.1rem;
+  }
+  .hero-link-value {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.82);
+  }
+  .hero-link-arrow { color: rgba(255,255,255,0.25); font-size: 0.8rem; }
+
+  /* ── MAIN CONTENT ───────────────────────────────────────────── */
+  main { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; }
+
+  section { padding: 5rem 0; border-bottom: 1px solid var(--rule); }
+  section:last-child { border-bottom: none; }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--steel);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 0.6rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1; height: 1px; background: var(--rule);
+    max-width: 60px;
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.7rem, 2.5vw, 2.2rem);
+    color: var(--navy);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    line-height: 1.25;
+  }
+
+  /* ── ABOUT / RESEARCH STATEMENT ───────────────────────────── */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .about-body p {
+    color: var(--text);
+    margin-bottom: 1.2rem;
+    line-height: 1.85;
+  }
+  .research-statement {
+    background: var(--navy);
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .research-statement::before {
+    content: '\201C';
+    font-family: 'Playfair Display', serif;
+    font-size: 8rem;
+    color: rgba(29,95,166,0.15);
+    position: absolute;
+    top: -1rem; left: 1rem;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .research-statement h3 {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--sky);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 1.2rem;
+  }
+  .research-statement p {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.97rem;
+    line-height: 1.85;
+    position: relative; z-index: 1;
+  }
+
+  /* Currently working on */
+  .working-on {
+    background: var(--warm);
+    border-left: 3px solid var(--gold);
+    padding: 1.8rem 2rem;
+    margin-top: 2rem;
+  }
+  .working-on h3 {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 0.8rem;
+  }
+  .working-on ul { list-style: none; }
+  .working-on li {
+    font-size: 0.93rem;
+    color: var(--text);
+    padding: 0.35rem 0;
+    display: flex; align-items: flex-start; gap: 0.6rem;
+  }
+  .working-on li::before {
+    content: '→'; color: var(--gold); flex-shrink: 0; margin-top: 0.05rem;
+  }
+
+  /* ── PUB CARDS ──────────────────────────────────────────────── */
+  .pub-card {
+    border: 1px solid var(--rule);
+    background: var(--white);
+    padding: 1.8rem 2rem;
+    margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    align-items: start;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+  .pub-card:hover { box-shadow: 0 4px 20px rgba(15,35,64,0.08); border-color: var(--sky); }
+  .pub-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--muted);
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    letter-spacing: 0.06em;
+    padding-top: 0.2rem;
+  }
+  .pub-content {}
+  .pub-badge {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    background: var(--pale);
+    color: var(--steel);
+    padding: 0.2rem 0.6rem;
+    border: 1px solid rgba(29,95,166,0.2);
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .pub-badge.q1 { background: #fff8e8; color: #8a6020; border-color: rgba(200,151,58,0.3); }
+  .pub-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+    line-height: 1.4;
+  }
+  .pub-title a { color: inherit; text-decoration: none; }
+  .pub-title a:hover { color: var(--steel); }
+  .pub-authors { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.3rem; }
+  .pub-authors strong { color: var(--text); }
+  .pub-venue { font-size: 0.85rem; color: var(--text); font-style: italic; }
+  .pub-meta {
+    display: flex; align-items: center; gap: 1rem;
+    margin-top: 0.8rem; flex-wrap: wrap;
+  }
+  .pub-cite {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--steel);
+    background: var(--pale);
+    padding: 0.2rem 0.6rem;
+    border: 1px solid rgba(29,95,166,0.15);
+  }
+  .pub-doi {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .pub-doi:hover { color: var(--steel); }
+
+  /* ── NEWS / RECOGNITION STRIP ───────────────────────────────── */
+  .recognition-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .rec-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    padding: 1.8rem;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .rec-card:hover { box-shadow: 0 6px 24px rgba(15,35,64,0.08); }
+  .rec-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--steel);
+  }
+  .rec-card.gold::before { background: var(--gold); }
+  .rec-card.green::before { background: #2a8a5a; }
+  .rec-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .rec-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--navy);
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+  }
+  .rec-body { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+  /* ── OUTREACH SECTION ───────────────────────────────────────── */
+  .outreach-intro {
+    font-size: 1rem; color: var(--muted); margin-bottom: 2rem; max-width: 680px;
+    line-height: 1.8;
+  }
+  .article-list { }
+  .article-year-group { margin-bottom: 2rem; }
+  .article-year-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--steel);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .article-item {
+    display: flex; align-items: baseline; gap: 1rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+  .article-item:last-child { border-bottom: none; }
+  .article-dot {
+    width: 6px; height: 6px;
+    background: var(--steel);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 0.45rem;
+  }
+  .article-link {
+    font-size: 0.92rem;
+    color: var(--text);
+    text-decoration: none;
+    flex: 1;
+    line-height: 1.5;
+  }
+  .article-link:hover { color: var(--steel); }
+  .article-pub {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  /* ── FOOTER ─────────────────────────────────────────────────── */
+  footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.5);
+    padding: 2.5rem 6rem;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.82rem;
+  }
+  footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+  footer a:hover { color: var(--white); }
+  .footer-links { display: flex; gap: 1.5rem; }
+
+  /* ── ANIMATIONS ─────────────────────────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-left > * { animation: fadeUp 0.6s ease forwards; opacity: 0; }
+  .hero-tag      { animation-delay: 0.1s; }
+  h1             { animation-delay: 0.2s; }
+  .hero-name-sub { animation-delay: 0.3s; }
+  .hero-desc     { animation-delay: 0.35s; }
+  .hero-tags     { animation-delay: 0.4s; }
+  .hero-cta      { animation-delay: 0.45s; }
+  .hero-right > * { animation: fadeUp 0.6s ease forwards; opacity: 0; }
+  .stat-strip    { animation-delay: 0.3s; }
+  .hero-links    { animation-delay: 0.4s; }
+
+  /* ── RESPONSIVE ─────────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 7rem 2rem 4rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .recognition-grid { grid-template-columns: 1fr; }
+    nav { padding: 0 1.5rem; }
+    .nav-links a { padding: 0 0.6rem; font-size: 0.76rem; }
+    footer { flex-direction: column; gap: 1rem; padding: 2rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-brand">S.W.A. <span>Hamdani</span></a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="research.html">Research</a>
+    <a href="projects.html">R&D Projects</a>
+    <a href="experience.html">Experience</a>
+    <a href="education.html">Education</a>
+    <a href="awards.html">Awards</a>
+    <a href="outreach.html">Outreach</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Cybersecurity Researcher</div>
+    <h1>Syed Wasif<br>Abbas Hamdani</h1>
+    <p class="hero-name-sub">Rawalpindi, Pakistan &nbsp;·&nbsp; NUST Alumni &nbsp;·&nbsp; IOM-UN</p>
+    <p class="hero-desc">
+      Cybersecurity researcher driven by genuine curiosity about how trust, resilience, and security can be built into the systems the world increasingly depends on. Working at the intersection of IoT security, blockchain-based network monitoring, and network resilience.
+    </p>
+    <div class="hero-tags">
+      <span class="tag">IoT Security</span>
+      <span class="tag">Blockchain</span>
+      <span class="tag">Network Resilience</span>
+      <span class="tag">Trust Management</span>
+      <span class="tag">ML for Security</span>
+    </div>
+    <div class="hero-cta">
+      <a href="research.html" class="btn-primary">View Research</a>
+      <a href="contact.html" class="btn-ghost">Get in Touch</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="stat-strip">
+      <div class="stat">
+        <div class="stat-number">96<span>+</span></div>
+        <div class="stat-label">Citations</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Publications</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">20<span>+</span></div>
+        <div class="stat-label">Yrs Experience</div>
+      </div>
+      <div class="stat" style="border-bottom:none;">
+        <div class="stat-number">3</div>
+        <div class="stat-label">Continents</div>
+      </div>
+      <div class="stat" style="border-bottom:none;">
+        <div class="stat-number">16</div>
+        <div class="stat-label">Nations — 1st</div>
+      </div>
+      <div class="stat" style="border-bottom:none; border-right:none;">
+        <div class="stat-number">1.1<span>k</span></div>
+        <div class="stat-label">ISOC Members Led</div>
+      </div>
+    </div>
+
+    <div class="hero-links">
+      <a href="https://scholar.google.com/citations?user=LyV-tMEAAAAJ&hl=en" target="_blank" class="hero-link">
+        <div class="hero-link-icon">📖</div>
+        <div class="hero-link-text">
+          <span class="hero-link-label">Google Scholar</span>
+          <span class="hero-link-value">LyV-tMEAAAAJ</span>
+        </div>
+        <span class="hero-link-arrow">↗</span>
+      </a>
+      <a href="https://orcid.org/0000-0003-1015-1104" target="_blank" class="hero-link">
+        <div class="hero-link-icon">🔬</div>
+        <div class="hero-link-text">
+          <span class="hero-link-label">ORCID</span>
+          <span class="hero-link-value">0000-0003-1015-1104</span>
+        </div>
+        <span class="hero-link-arrow">↗</span>
+      </a>
+      <a href="https://www.researchgate.net/profile/Syed-Wasif-Abbas-Hamdani-2" target="_blank" class="hero-link">
+        <div class="hero-link-icon">🔗</div>
+        <div class="hero-link-text">
+          <span class="hero-link-label">ResearchGate</span>
+          <span class="hero-link-value">Syed-Wasif-Abbas-Hamdani-2</span>
+        </div>
+        <span class="hero-link-arrow">↗</span>
+      </a>
+      <a href="https://github.com/swhamdani" target="_blank" class="hero-link">
+        <div class="hero-link-icon">⌥</div>
+        <div class="hero-link-text">
+          <span class="hero-link-label">GitHub</span>
+          <span class="hero-link-value">swhamdani</span>
+        </div>
+        <span class="hero-link-arrow">↗</span>
+      </a>
+      <a href="https://cyberwalk.pk" target="_blank" class="hero-link">
+        <div class="hero-link-icon">🛡</div>
+        <div class="hero-link-text">
+          <span class="hero-link-label">Cybersecurity Blog</span>
+          <span class="hero-link-value">cyberwalk.pk</span>
+        </div>
+        <span class="hero-link-arrow">↗</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<main>
+
+  <!-- ABOUT / RESEARCH STATEMENT -->
+  <section id="about">
+    <div class="section-label">About</div>
+    <h2>Research Profile</h2>
+    <div class="about-grid">
+      <div class="about-body">
+        <p>I am a cybersecurity researcher and practitioner with over two decades of experience spanning applied research, academic engagement, and industry engineering. My research centers on how trust, resilience, and verifiability can be engineered into distributed and networked systems — from IoT deployments to blockchain-backed security infrastructure.</p>
+        <p>My work has been published in Q1 journals including <em>ACM Computing Surveys</em> (96 citations) and presented at IEEE conferences across three continents. I hold an MS in Software Engineering from NUST, where my thesis on distributed IoT trust management earned Grade A and produced both a journal publication and an open-source simulation tool.</p>
+        <p>Beyond the lab, I serve as <strong>General Secretary of the ISOC Pakistan Islamabad Chapter</strong>, was selected as an <strong>ISOC Community Fellow 2025</strong>, and mentor an Early Career Fellow through the ISOC Foundation in 2026. I am also a Visiting Faculty member at Pakistani universities, a reviewer for Elsevier's <em>Journal of Network and Computer Applications</em>, and a science communicator through <a href="https://cyberwalk.pk" target="_blank" style="color:var(--steel);">CyberWalk.pk</a> and national print media.</p>
+
+        <div class="working-on">
+          <h3>Currently Working On</h3>
+          <ul>
+            <li>BENSAM-Tool: extending the blockchain-enhanced network monitoring framework into a policy-aware, vulnerability-assessment system (manuscript in preparation, 2026)</li>
+            <li>Research into AI-driven anomaly detection integrated with distributed ledger audit trails</li>
+            <li>Open collaboration on IoT trust frameworks and network resilience — open to co-authorship and PhD research partnerships</li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <div class="research-statement">
+          <h3>Research Statement</h3>
+          <p>How do we know whether a networked device, a scan result, or a security event can be trusted? This question sits at the core of my research. I study how trust can be computed, propagated, and verified across heterogeneous IoT environments and how blockchain-based architectures can provide tamper-evident guarantees for network security operations. The underlying conviction is that security is not merely a technical property to be bolted on, but a systemic quality that must be designed in from the ground up — across protocols, architectures, and the communities that depend on them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELECTED PUBLICATIONS -->
+  <section id="publications">
+    <div class="section-label">Publications</div>
+    <h2>Selected Research Output</h2>
+
+    <div class="pub-card">
+      <div class="pub-year">2025</div>
+      <div class="pub-content">
+        <div class="pub-badge">Journal · Blockchains</div>
+        <div class="pub-title">
+          <a href="https://www.mdpi.com/2813-5288/4/1/1" target="_blank">Blockchain-Enhanced Network Scanning and Monitoring (BENSAM) Framework</a>
+        </div>
+        <div class="pub-authors"><strong>Hamdani, S. W. A.</strong>, Ali, K., &amp; Muhammad, Z.</div>
+        <div class="pub-venue">Blockchains, 4(1), 1.</div>
+        <div class="pub-meta">
+          <span class="pub-cite">Active Research</span>
+          <a href="https://doi.org/10.3390/blockchains4010001" target="_blank" class="pub-doi">DOI: 10.3390/blockchains4010001 ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-year">2021</div>
+      <div class="pub-content">
+        <div class="pub-badge q1">Q1 Journal · ACM Computing Surveys</div>
+        <div class="pub-title">
+          <a href="https://dl.acm.org/doi/10.1145/3442480" target="_blank">Cybersecurity Standards in the Context of Operating System: Practical Aspects, Analysis, and Comparisons</a>
+        </div>
+        <div class="pub-authors"><strong>Hamdani, S. W. A.</strong>, Abbas, H., Janjua, A. R., Shahid, W. B., et al.</div>
+        <div class="pub-venue">ACM Computing Surveys, 54(3), 1–36.</div>
+        <div class="pub-meta">
+          <span class="pub-cite">📎 Cited: 96</span>
+          <span class="pub-cite">IF ≈ 14</span>
+          <a href="https://doi.org/10.1145/3442480" target="_blank" class="pub-doi">DOI: 10.1145/3442480 ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-year">2021</div>
+      <div class="pub-content">
+        <div class="pub-badge">Journal · Turkish J. Electrical Engineering</div>
+        <div class="pub-title">
+          <a href="https://journals.tubitak.gov.tr/elektrik/vol29/iss2/21/" target="_blank">Dynamic Distributed Trust Management Scheme for the Internet of Things</a>
+        </div>
+        <div class="pub-authors"><strong>Hamdani, S. W. A.</strong>, Khan, A. W., Iltaf, N., Bangash, J. I., et al.</div>
+        <div class="pub-venue">Turkish Journal of Electrical Engineering &amp; Computer Sciences, 29(2), 796–815.</div>
+        <div class="pub-meta">
+          <span class="pub-cite">📎 Cited: 11</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-year">2020</div>
+      <div class="pub-content">
+        <div class="pub-badge">Conference · IEEE DASC</div>
+        <div class="pub-title">
+          <a href="https://ieeexplore.ieee.org/document/9251132/" target="_blank">DTMSim-IoT: A Distributed Trust Management Simulator for IoT Networks</a>
+        </div>
+        <div class="pub-authors"><strong>Hamdani, S. W. A.</strong>, Khan, A. W., Iltaf, N., &amp; Iqbal, W.</div>
+        <div class="pub-venue">IEEE DASC 2020 (pp. 491–498). Calgary, Canada.</div>
+        <div class="pub-meta">
+          <span class="pub-cite">📎 Cited: 8</span>
+          <a href="https://doi.org/10.1109/DASC-PICom-CBDCom-CyberSciTech49142.2020.00088" target="_blank" class="pub-doi">DOI ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:1.5rem; font-size:0.88rem; color:var(--muted);">
+      → <a href="research.html" style="color:var(--steel);">View full publication list, copyright notice, and paper under preparation</a>
+    </p>
+  </section>
+
+  <!-- RECOGNITION -->
+  <section id="recognition">
+    <div class="section-label">Recognition</div>
+    <h2>Awards &amp; Leadership</h2>
+    <div class="recognition-grid">
+      <div class="rec-card">
+        <div class="rec-year">2026</div>
+        <div class="rec-title">ECF Mentor — ISOC Foundation Early Career Fellowship</div>
+        <div class="rec-body">Selected by the ISOC Foundation to mentor a 2026 Early Career Fellow on Internet leadership, project development, and stakeholder engagement.</div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-year">2026 – Present</div>
+        <div class="rec-title">General Secretary — ISOC Pakistan Islamabad Chapter</div>
+        <div class="rec-body">Leading governance and strategic initiatives for the Gigabit-ranked ISOC Islamabad Chapter (1,100+ members), driving Internet access, education, and policy programs.</div>
+      </div>
+      <div class="rec-card gold">
+        <div class="rec-year">2025</div>
+        <div class="rec-title">ISOC Community Fellow — Internet Society</div>
+        <div class="rec-body">Selected for the Internet Society's 2025 Community Fellowship cohort, recognizing contributions to cybersecurity awareness and digital community empowerment.</div>
+      </div>
+      <div class="rec-card gold">
+        <div class="rec-year">2022</div>
+        <div class="rec-title">NUST Award of Publication</div>
+        <div class="rec-body">Cash award (Rs. 33,600) from NUST recognizing exceptional research output from MS thesis resulting in a Q1 journal publication.</div>
+      </div>
+      <div class="rec-card green">
+        <div class="rec-year">2019</div>
+        <div class="rec-title">1st Place — 2nd OIC-CERT Cyber Drill (16 Nations)</div>
+        <div class="rec-body">Team NUST-NCSAEL ranked 1st overall among all participating countries and topped all Pakistani participants in the international cybersecurity exercise.</div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-year">2016</div>
+        <div class="rec-title">HIVE Global Leadership Program</div>
+        <div class="rec-body">Selected from Pakistan among 130 leaders, entrepreneurs, and innovators from 33 countries for technology-driven community impact initiatives. California, USA.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCIENCE COMMUNICATION -->
+  <section id="outreach">
+    <div class="section-label">Science Communication</div>
+    <h2>Public Cybersecurity Outreach</h2>
+    <p class="outreach-intro">Communicating cybersecurity research and policy to general audiences is not a side activity — it is a responsibility. Since 2022, I have contributed regularly to national and digital publications, founded CyberWalk.pk, and delivered invited talks at universities. A selection of recent work is below.</p>
+
+    <div class="article-year-group">
+      <div class="article-year-label">2026</div>
+      <div class="article-item">
+        <div class="article-dot"></div>
+        <a href="https://www.linkedin.com/posts/wasifhamdani_moitt-nadra-artificialintelligence-activity-7447923026618175488-yanv" target="_blank" class="article-link">AI &amp; Pakistan: Latest Developments and Evolving Cyber Threats</a>
+        <span class="article-pub">LinkedIn · Apr 2026</span>
+      </div>
+    </div>
+
+    <div class="article-year-group">
+      <div class="article-year-label">2025</div>
+      <div class="article-item">
+        <div class="article-dot"></div>
+        <a href="#" class="article-link">Cyber Challenges and National Response: Pakistan's Cybersecurity Review 2025</a>
+        <span class="article-pub">LinkedIn · Dec 2025</span>
+      </div>
+      <div class="article-item">
+        <div class="article-dot"></div>
+        <a href="#" class="article-link">Secure Digital Pakistan: Defense through Community</a>
+        <span class="article-pub">LinkedIn · Sep 2025</span>
+      </div>
+    </div>
+
+    <div class="article-year-group">
+      <div class="article-year-label">2024</div>
+      <div class="article-item">
+        <div class="article-dot"></div>
+        <a href="https://e.naibaat.pk/ePaper/islamabad/31-12-2024/details.aspx?id=p3_23.jpg" target="_blank" class="article-link">2025 Cybersecurity Goals: Lessons from 2024 and Resolutions for a Safer Digital Future</a>
+        <span class="article-pub">Nai Baat · Dec 2024</span>
+      </div>
+      <div class="article-item">
+        <div class="article-dot"></div>
+        <a href="https://e.naibaat.pk/ePaper/islamabad/22-11-2024/details.aspx?id=p3_26.jpg" target="_blank" class="article-link">Your Passwords Are Outdated! Embrace Passkeys</a>
+        <span class="article-pub">Nai Baat · Nov 2024</span>
+      </div>
+      <div class="article-item">
+        <div class="article-dot"></div>
+        <a href="https://e.naibaat.pk/ePaper/islamabad/28-10-2024/details.aspx?id=p3_23.jpg" target="_blank" class="article-link">Why October is Celebrated as Cybersecurity Awareness Month</a>
+        <span class="article-pub">Nai Baat · Oct 2024</span>
+      </div>
+    </div>
+
+    <div class="article-year-group">
+      <div class="article-year-label">2022–2023</div>
+      <div class="article-item">
+        <div class="article-dot"></div>
+        <a href="https://propakistani.pk/2022/09/07/cyber-crime-is-increasing-at-an-alarming-rate-heres-what-we-can-do/" target="_blank" class="article-link">Cyber Crime is Increasing at an Alarming Rate, Here's What We Can Do</a>
+        <span class="article-pub">ProPakistani · Sep 2022</span>
+      </div>
+      <div class="article-item">
+        <div class="article-dot"></div>
+        <span class="article-link" style="cursor:default;">Invited Talk: AI in Cybersecurity — Strengthening Defenses Against Emerging Threats</span>
+        <span class="article-pub">Riphah Intl. Univ. · Oct 2023</span>
+      </div>
+    </div>
+
+    <p style="margin-top:1.5rem; font-size:0.88rem; color:var(--muted);">
+      → <a href="outreach.html" style="color:var(--steel);">View full outreach, volunteer work, and CyberWalk.pk</a>
+    </p>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2026 Syed Wasif Abbas Hamdani &nbsp;·&nbsp; Rawalpindi, Pakistan</span>
+  <div class="footer-links">
+    <a href="https://orcid.org/0000-0003-1015-1104" target="_blank">ORCID</a>
+    <a href="https://scholar.google.com/citations?user=LyV-tMEAAAAJ&hl=en" target="_blank">Scholar</a>
+    <a href="https://github.com/swhamdani" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/wasifhamdani/" target="_blank">LinkedIn</a>
+    <a href="https://cyberwalk.pk" target="_blank">CyberWalk.pk</a>
+    <a href="mailto:hamdani.cybsec@gmail.com">Email</a>
+  </div>
+</footer>
+
+</body>
+</html>
